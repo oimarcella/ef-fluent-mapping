@@ -8,7 +8,12 @@ namespace Blog.Data.Mappings{
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("User");
+            
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id)
+            .ValueGeneratedOnAdd()
+            .UseIdentityColumn();
+
             builder.Property(x => x.Name)
             .IsRequired()
             .HasColumnName("Name")
