@@ -12,16 +12,17 @@ class Program
         Console.WriteLine("Vamos estudar EF e Fluent Mapping!");
 
         using var ctx = new BlogDataContext();
-        /*ctx.Users.Add(new Models.User{
+        /**/ctx.Users.Add(new User{
             Name = "Fulano de Tal",
             Email = "fulano@tal.com.br",
             Image = "muimg.png",
             Bio = "Muito falado por aí",
             Slug = "otalfulano",
-            PasswordHash = "123abc"
-        });*/
+            PasswordHash = "123abc",
+            GitHub = "oimarcella"
+        });
 
-        var user = ctx.Users.FirstOrDefault(x=> x.Id == 1011);
+        /*var user = ctx.Users.FirstOrDefault(x=> x.Id == 1011);
         ctx.Posts.Add(new Post {
             Title = "Como começar no ecossistema .NET",
             Body = "Meu artigo",
@@ -34,7 +35,7 @@ class Program
             Slug = "comecando-no-dotnet",
             Summary = "Ola dev",
             //Tags = null
-        });
+        });*/
 
         ctx.SaveChanges();
     }

@@ -31,6 +31,8 @@ namespace Blog.Data.Mappings{
             .IsRequired();
             builder.Property(x => x.PasswordHash)
             .IsRequired();
+            builder.Property(x => x.GitHub)
+            .IsRequired();
 
             builder.HasIndex(x => x.Slug, "IX_User_Slug").IsUnique();
 
